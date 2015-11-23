@@ -13,7 +13,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys FD3A5288F042B6850C66B31F
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys 71DCFD284A79C3B38668286BC97EC7A07EDE3FC1
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys DD8F2338BAE7501E3DD5AC78C273792F7D83545D
 
-RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52
+RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
   && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
