@@ -9,6 +9,7 @@ RUN apt-get update
 RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python
 
 ENV NVM_DIR /usr/local/nvm
+ENV NVM_SYMLINK_CURRENT true
 ENV NODE_VERSION 4
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
@@ -17,5 +18,5 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
-ENV NODE_PATH=$NVM_DIR/versions/node/`nvm current`/lib/node_modules
-ENV PATH=$NVM_DIR/versions/node/`nvm current`/bin:$PATH
+ENV PATH      $NVM_DIR/current/bin:$PATH
+ENV NODE_PATH $NVM_DIR/current/lib/node_modules
