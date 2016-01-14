@@ -17,5 +17,5 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
     && nvm alias default $NODE_VERSION \
     && nvm use default
 
-ENV NODE_PATH $NVM_DIR/versions/node/`nvm current`/lib/node_modules
-ENV PATH      $NVM_DIR/versions/node/`nvm current`/bin:$PATH
+ENV NODE_PATH=$NVM_DIR/versions/node/`nvm current`/lib/node_modules
+ENV PATH=$NVM_DIR/versions/node/`nvm current`/bin:$PATH
