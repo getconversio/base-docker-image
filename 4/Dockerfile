@@ -12,7 +12,7 @@ ENV NVM_DIR /usr/local/nvm
 ENV NVM_SYMLINK_CURRENT true
 ENV NODE_VERSION 4.2.4
 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
