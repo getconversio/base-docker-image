@@ -6,7 +6,7 @@ MAINTAINER Stefano Sala <stefano@receiptful.com>
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN apt-get update
-RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python
+RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python openjdk-7-jre-headless
 
 ENV NVM_DIR /usr/local/nvm
 ENV NVM_SYMLINK_CURRENT true
