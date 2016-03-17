@@ -10,7 +10,7 @@ RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python openjdk-
 
 ENV NVM_DIR /usr/local/nvm
 ENV NVM_SYMLINK_CURRENT true
-ENV NODE_VERSION 5.8.0
+ENV NODE_VERSION 5.9.0
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
