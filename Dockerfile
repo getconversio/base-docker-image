@@ -1,22 +1,25 @@
-FROM ubuntu:14.04
+FROM heroku/cedar:14
 
 MAINTAINER Stefano Sala <stefano@receiptful.com>
 
+# The following setup is inspired by the Heroku Node-js dockerfile with some
+# extras and a different node version.
+
+# Which version of node?
+ENV NODE_ENGINE 6.1.0
+
+# Locate our binaries
+ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
+
+# Create some needed directories
+RUN mkdir -p /app/heroku/node /app/.profile.d
+WORKDIR /app/user
+
+# Install node
+RUN curl -s https://s3pository.heroku.com/node/v$NODE_ENGINE/node-v$NODE_ENGINE-linux-x64.tar.gz | tar --strip-components=1 -xz -C /app/heroku/node
+
+# Export the node path in .profile.d
+RUN echo "export PATH=\"/app/heroku/node/bin:/app/user/node_modules/.bin:\$PATH\"" > /app/.profile.d/nodejs.sh
+
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-
-RUN apt-get update
-RUN apt-get -y install curl git libfontconfig1 libjpeg8 libicu52 python openjdk-7-jre-headless
-
-ENV NVM_DIR /usr/local/nvm
-ENV NVM_SYMLINK_CURRENT true
-ENV NODE_VERSION 6.2.0
-
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && nvm use default
-
-ENV PATH      $NVM_DIR/current/bin:$PATH
-ENV NODE_PATH $NVM_DIR/current/lib/node_modules
