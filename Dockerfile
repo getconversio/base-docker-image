@@ -6,7 +6,7 @@ MAINTAINER Stefano Sala <stefano@receiptful.com>
 # extras and a different node version.
 
 # Which version of node?
-ENV NODE_ENGINE 6.3.0
+ENV NODE_ENGINE 6.3.1
 
 # Locate our binaries
 ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
