@@ -1,12 +1,12 @@
 FROM heroku/cedar:14
 
-MAINTAINER Stefano Sala <stefano@receiptful.com>
+MAINTAINER Stefano Sala <stefano@conversio.com>
 
 # The following setup is inspired by the Heroku Node-js dockerfile with some
 # extras and a different node version.
 
 # Which version of node?
-ENV NODE_ENGINE 6.9.5
+ENV NODE_ENGINE 7.6.0
 
 # Locate our binaries
 ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
