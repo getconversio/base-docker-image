@@ -6,7 +6,7 @@ MAINTAINER Stefano Sala <stefano@conversio.com>
 # extras and a different node version.
 
 # Which version of node?
-ENV NODE_ENGINE 8.1.2
+ENV NODE_ENGINE 8.1.3
 
 # Locate our binaries
 ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
