@@ -16,7 +16,7 @@ ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
 RUN mkdir -p /app/heroku/node /app/.profile.d
 
 # Install node
-RUN curl -s https://s3pository.heroku.com/node/v$NODE_ENGINE/node-v$NODE_ENGINE-linux-x64.tar.gz | tar --strip-components=1 -xz -C /app/heroku/node \
+RUN curl -s https://s3.amazonaws.com/heroku-nodebin/node/release/linux-x64/node-v$NODE_ENGINE-linux-x64.tar.gz | tar --strip-components=1 -xz -C /app/heroku/node \
   && echo "export PATH=\"/app/heroku/node/bin:/app/user/node_modules/.bin:\$PATH\"" > /app/.profile.d/nodejs.sh
 
 # Install yarn
