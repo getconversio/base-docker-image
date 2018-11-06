@@ -7,7 +7,7 @@ WORKDIR /app/user
 # The following setup is inspired by the Heroku Node-js dockerfile with some extras and a different node version.
 
 # Which version of node?
-ENV NODE_ENGINE 8.11.4
+ENV NODE_ENGINE 10.13.0
 
 # Locate our binaries
 ENV PATH /app/heroku/node/bin/:/app/user/node_modules/.bin:$PATH
